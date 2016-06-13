@@ -58,6 +58,14 @@ This plugin can be installed from CLI:
 cordova plugins add https://github.com/DavidBriglio/cordova-banner-notification
 ```
 
+## Library Used
+This plugin is a wrapper to the CWStatusBarNotification library created by [cezarywojcik](https://github.com/cezarywojcik):
+https://github.com/cezarywojcik/CWStatusBarNotification
+
+The version used is a <i>slightly</i> modified version of v2.3.4.
+
+Please support their github!
+
 ## Questions?
 Please see the wiki for how to use the plugin.
 
