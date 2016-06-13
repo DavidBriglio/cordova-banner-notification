@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="https://github.com/DavidBriglio/cordova-banner-notification"
+        id="cordova-banner-notification" version="0.0.1">
+    <name>Banner Notification</name>
+    <author>David Briglio</author>
+    <description>Cordova Banner Notification</description>
+    <license>MIT</license>
+    <keywords>cordova,banner,notification,alert</keywords>
+    <js-module src="www/banner.js" name="banner">
+        <clobbers target="cordova.plugins.notification.banner" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Banner">
+                <param name="ios-package" value="Banner"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Banner.h" />
+        <source-file src="src/ios/Banner.m" />
+        <header-file src="src/ios/CWStatusBarNotification/CWStatusBarNotification.h" />
+        <source-file src="src/ios/CWStatusBarNotification/CWStatusBarNotification.m" />
+    </platform>
+</plugin>

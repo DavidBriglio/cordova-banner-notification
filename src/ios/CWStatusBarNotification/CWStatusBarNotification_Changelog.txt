@@ -1,0 +1,12 @@
+11:20 AM 6/10/2016
+CWStatusBarNotification used at version 2.3.4
+
+_____________________________________________
+
+CWStatusBarNotification.m was modified in order to successfully compile:
+
+Line 222: in -(CWStatusBarNotification *)init:
+__weak typeof(self) weakSelf = self;
+
+Changed to:
+__weak CWStatusBarNotification *weakSelf = self;
