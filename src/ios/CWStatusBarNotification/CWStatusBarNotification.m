@@ -41,7 +41,7 @@
 - (CGFloat)scrollOffset
 {
     if (self.numberOfLines != 1) return 0;
-    
+
     CGRect insetRect = CGRectInset(self.bounds, PADDING, 0);
     return MAX(0, [self fullWidth] - insetRect.size.width);
 }
@@ -209,7 +209,6 @@ static void cancel_delayed_block(CWDelayedBlockHandle delayedHandle)
         self.notificationStyle = CWNotificationStyleStatusBarNotification;
         self.notificationAnimationInStyle = CWNotificationAnimationStyleBottom;
         self.notificationAnimationOutStyle = CWNotificationAnimationStyleBottom;
-        self.notificationAnimationType = CWNotificationAnimationTypeReplace;
         self.notificationIsDismissing = NO;
         self.isCustomView = NO;
         self.preferredStatusBarStyle = UIStatusBarStyleDefault;
@@ -392,10 +391,6 @@ static void cancel_delayed_block(CWDelayedBlockHandle delayedHandle)
 {
     self.statusBarView = [[UIView alloc] initWithFrame:[self getNotificationLabelFrame]];
     self.statusBarView.clipsToBounds = YES;
-    if (self.notificationAnimationType == CWNotificationAnimationTypeReplace) {
-        UIView *statusBarImageView = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:YES];
-        [self.statusBarView addSubview:statusBarImageView];
-    }
     [self.notificationWindow.rootViewController.view addSubview:self.statusBarView];
     [self.notificationWindow.rootViewController.view sendSubviewToBack:self.statusBarView];
 }

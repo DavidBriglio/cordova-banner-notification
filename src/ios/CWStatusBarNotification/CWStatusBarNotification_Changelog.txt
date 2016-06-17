@@ -10,3 +10,44 @@ __weak typeof(self) weakSelf = self;
 
 Changed to:
 __weak CWStatusBarNotification *weakSelf = self;
+
+_____________________________________________
+
+CWStatusBarNotification.m + CWStatusBarNotification.h were modified in order to remove
+"pushing current screen" when notification slides in:
+
+CWStatusBarNotification.m:
+  212: removed "self.notificationAnimationType = CWNotificationAnimationTypeReplace;"
+
+  395: removed
+  "
+  if (self.notificationAnimationType == CWNotificationAnimationTypeReplace) {
+      UIView *statusBarImageView = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:YES];
+      [self.statusBarView addSubview:statusBarImageView];
+  }
+  "
+CWStatusBarNotification.h:
+  89: removed
+  "
+  /**
+   * @typedef CWNotificationAnimationType
+   * @brief Determines whether the notification moves the existing content out of
+   * the way or simply overlays it.
+   */
+  typedef NS_ENUM(NSInteger, CWNotificationAnimationType) {
+      /// Moves existing content out of the way.
+      CWNotificationAnimationTypeReplace,
+      /// Overlays existing content.
+      CWNotificationAnimationTypeOverlay
+  };
+  "
+
+  173: removed
+  "
+  /**
+   * Determines whether the the notification's animation replaces the existing
+   * content or overlays it. Default value is
+   * @c CWNotificationAnimationTypeReplace.
+   */
+  @property (nonatomic) CWNotificationAnimationType notificationAnimationType;
+  "
