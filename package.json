@@ -1,0 +1,29 @@
+{
+  "name": "cordova-banner-notification",
+  "version": "0.1.1",
+  "description": "Cordova Banner Notification - Add foreground banner notifications.",
+  "cordova": {
+    "id": "cordova-banner-notification",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidBriglio/cordova-banner-notification.git"
+  },
+  "keywords": [
+    "cordova",
+    "banner",
+    "notification",
+    "alert",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "David Briglio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidBriglio/cordova-banner-notification/issues"
+  },
+  "homepage": "https://github.com/DavidBriglio/cordova-banner-notification#readme"
+}
