@@ -54,9 +54,11 @@ cordova.plugins.notification.banner.show({
 - iOS (Tested on iOS 9)
 
 ## Installation:
-This plugin can be installed from CLI:
+This plugin can be installed from CLI with either of the following:
 
 ```bash
+cordova plugins add cordova-banner-notification
+#or
 cordova plugins add https://github.com/DavidBriglio/cordova-banner-notification
 ```
 
@@ -64,7 +66,8 @@ cordova plugins add https://github.com/DavidBriglio/cordova-banner-notification
 This plugin is a wrapper to the CWStatusBarNotification library created by [cezarywojcik](https://github.com/cezarywojcik):
 https://github.com/cezarywojcik/CWStatusBarNotification
 
-The version used is a <i>slightly</i> modified version of v2.3.4.
+- The version used is a modified version of v2.3.4
+- The animation effect of altering the view when the notification slides in/out has been removed
 
 Please support their github!
 
@@ -79,4 +82,3 @@ Feel free to send me a message, open an issue, or make pull requests!
 This software is released under the MIT License.
 
 David Briglio 2016.
-
