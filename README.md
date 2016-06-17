@@ -1,4 +1,6 @@
-# cordova-banner-notifications
+# Cordova Nanner Notifications
+[![npm version](https://badge.fury.io/js/cordova-banner-notification.svg)](https://badge.fury.io/js/cordova-banner-notification)
+
 This plugin was created to support showing banner notifications at the top of the application in cordova. This is meant for iOS to show notifications while the app is in the foreground. The notification structure is easy to use and able to support function callbacks on clicking the banner.
 
 ## Supported Features:
