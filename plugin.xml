@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="https://github.com/DavidBriglio/cordova-banner-notification"
-        id="cordova-banner-notification" version="0.1.1">
+        id="cordova-banner-notification" version="0.1.2">
     <name>Banner Notification</name>
     <author>David Briglio</author>
-    <description>Cordova Banner Notification</description>
+    <description>Cordova Banner Notification - Add foreground banner notifications.</description>
     <license>MIT</license>
     <keywords>cordova,banner,notification,alert</keywords>
     <js-module src="www/banner.js" name="banner">

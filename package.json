@@ -1,6 +1,6 @@
 {
   "name": "cordova-banner-notification",
-  "version": "0.2.0",
+  "version": "0.1.2",
   "description": "Cordova Banner Notification - Add foreground banner notifications.",
   "cordova": {
     "id": "cordova-banner-notification",
@@ -17,6 +17,8 @@
     "banner",
     "notification",
     "alert",
+    "ios",
+    "notifications",
     "ecosystem:cordova",
     "cordova-ios"
   ],
