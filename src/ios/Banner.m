@@ -58,11 +58,13 @@
     }
 
     if(backColor) {
-        notification.notificationLabelBackgroundColor = [self getColor:backColor];
+        notification.notificationLabelBackgroundColor = [self getColor:backColor
+                                                          defaultColor:0];
     }
 
     if(textColor) {
-        notification.notificationLabelTextColor = [self getColor:textColor];
+        notification.notificationLabelTextColor = [self getColor:textColor
+                                                    defaultColor:255];
     }
 
     //Weak reference to be able to dismiss the notification in the handler
@@ -90,32 +92,58 @@
                                      forDuration:duration];
 }
 
-//Get UIColor from {red:255, green:255, blue:255} format dictionary
-- (UIColor *)getColor:(NSDictionary *)colorDict
+//Get UIColor from {red:255, green:255, blue:255, alpha:255} format dictionary
+- (UIColor *)getColor:(NSDictionary *)colorDict defaultColor:(int) defaultColor
 {
-    int red = [[colorDict objectForKey:@"red"] integerValue];
-    int green = [[colorDict objectForKey:@"green"] integerValue];
-    int blue = [[colorDict objectForKey:@"blue"] integerValue];
+    int red = defaultColor;
+    int green = defaultColor;
+    int blue = defaultColor;
+    int alpha = 255;
 
-    if(!red)
-    {
-        red = 0;
+    if([colorDict objectForKey:@"red"]) {
+        red = [[colorDict objectForKey:@"red"] integerValue];
+        if(red < 0) {
+            red = 0;
+        }
+        else if(red > 255) {
+            red = 255;
+        }
     }
 
-    if(!green)
-    {
-        green = 0;
+    if([colorDict objectForKey:@"green"]) {
+        green = [[colorDict objectForKey:@"green"] integerValue];
+        if(green < 0) {
+            green = 0;
+        }
+        else if(green > 255) {
+            green = 255;
+        }
     }
 
-    if(!blue)
-    {
-        blue = 0;
+    if([colorDict objectForKey:@"blue"]) {
+        blue = [[colorDict objectForKey:@"blue"] integerValue];
+        if(blue < 0) {
+            blue = 0;
+        }
+        else if(blue > 255) {
+            blue = 255;
+        }
+    }
+
+    if([colorDict objectForKey:@"alpha"]) {
+        alpha = [[colorDict objectForKey:@"alpha"] integerValue];
+        if(alpha < 0) {
+            alpha = 0;
+        }
+        else if(alpha > 255) {
+            alpha = 255;
+        }
     }
 
     return [UIColor colorWithRed:red/255.0
                            green:green/255.0
                             blue:blue/255.0
-                           alpha:1.0]; //alpha is left at 1.0 because any other value looks bad with animation
+                           alpha:alpha/255.0];
 }
 
 //Get the integer code for the animation style from string 'top'/'bottom'/'right'/'left'

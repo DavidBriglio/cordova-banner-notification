@@ -24,6 +24,7 @@ cordova.plugins.notification.banner.show({
   message:"New Notification",
   //style: "big",
   backcolor:{
+    //alpha: 255,
     red: 255,
     blue: 50
   }
@@ -42,6 +43,7 @@ cordova.plugins.notification.banner.show({
   message:"New Notification",
   style: "small",
   backcolor:{
+    //alpha: 255,
     red: 255,
     blue: 50
   }
