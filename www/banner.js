@@ -1,4 +1,4 @@
-/* 
+/*
  * cordova-banner-notification
  * Created By David Briglio - 2016
  * https://github.com/DavidBriglio/cordova-banner-notification
@@ -9,9 +9,9 @@
 var exec = require("cordova/exec");
 
 var Banner = {
-    
+
     __listeners: [],
-    
+
     //Handler function for when a banner is clicked
     __click: function(data){
         //Ececute all listening functions passing in the banner options
@@ -19,10 +19,11 @@ var Banner = {
             f(data);
         }
     },
-    
+
     //Displays the banner
     show: function(options) {
-        if(options.message === undefined || options.message === null) {
+        if(options === undefined || options === null || options.message === undefined ||
+           options.message === null || options.message === "") {
             return false;
         }
         cordova.exec(null, null, "Banner", "show", [options]);
