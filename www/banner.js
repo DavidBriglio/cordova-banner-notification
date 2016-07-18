@@ -15,9 +15,11 @@ var Banner = {
     //Handler function for when a banner is clicked
     __click: function(data){
         //Ececute all listening functions passing in the banner options
-        for( var f of this.__listeners) {
-            f(data);
-        }
+        var listeners = this.__listeners;
+		
+		for (var i = 0; i < listeners.length; i++) {
+			listeners[i](data);
+		}
     },
 
     //Displays the banner
