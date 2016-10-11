@@ -53,7 +53,7 @@ cordova.plugins.notification.banner.show({
 
 
 ## Supported Platforms:
-- iOS (Tested on iOS 9)
+- iOS (Tested on iOS 9 & 10)
 
 ## Installation:
 This plugin can be installed from CLI with either of the following:
