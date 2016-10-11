@@ -5,6 +5,10 @@ _____________________________________________
 
 CWStatusBarNotification.m was modified in order to successfully compile:
 
+Line 109: before "- (UIStatusBarStyle)preferredStatusBarStyle", added:
+@synthesize preferredStatusBarStyle = _preferredStatusBarStyle;
+
+
 Line 222: in -(CWStatusBarNotification *)init:
 __weak typeof(self) weakSelf = self;
 
