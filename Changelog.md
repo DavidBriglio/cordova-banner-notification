@@ -1,5 +1,8 @@
 #Changelog
 ---
+##v0.1.6 - Oct 11, 2016
+- Small update to enable compatibility with iOS 10.
+
 ##v0.1.5 - Jul 18, 2016
 - Replaced ES6 foreach loop since ES6 isn't supported by all devices/browsers yet
 
