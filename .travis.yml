@@ -2,11 +2,11 @@ language: objective-c
 
 install:
   - npm install -g cordova
+  - npm install -g plugman
   - cordova create testing com.tester.test Tester
   - cd testing
   - cordova platform add ios
 
 script:
-  - cordova plugin remove cordova-banner-notification
-  - cordova plugin add https://github.com/DavidBriglio/cordova-banner-notification
+  - plugman install --platform ios --project /www --plugin https://github.com/DavidBriglio/cordova-banner-notification
   - cordova build ios
